@@ -1,1 +1,32 @@
+Algorithm: 
+Step 1: Start the program.
+Step 2: Initialize the head pointer to NULL.
+Step 3: Display the menu with the following operations:
+•	Add a file or folder name
+•	Display all entries
+•	Search for an entry
+•	Delete an entry
+•	Count total entries
+•	Exit
+Step 4: Accept the user's choice.
+Step 5: Perform the selected operation:
+1.	Add: Create a new node, store the file or folder name, and insert it into the linked list.
+2.	Display: Traverse the linked list from the head and display all entries.
+3.	Search: Traverse the list and compare each name with the required name. Display whether it is found.
+4.	Delete: Search for the required name and remove its node from the linked list.
+5.	Count: Traverse the list and count the total number of nodes.
+6.	Exit: Stop the program.
+Step 6: If the user does not select Exit, return to Step 3.
+Step 7: Free the allocated memory before terminating the program.
+Step 8: Stop.
+
+
+
+
+
+
+
+
+
+Flowchart:
 
