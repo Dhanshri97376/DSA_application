@@ -1,1 +1,41 @@
+Initialize
+1.	Set head, tail, and current to NULL.
+2.	Display the menu and read the user's choice.
+
+Add Song
+3.	Read title, artist, and album; create a new node.
+4.	If empty, set head, tail, and current to the new node.
+5.	Otherwise link the new node after tail and update tail.
+
+Display Playlist
+6.	If head is NULL, report an empty playlist.
+7.	Otherwise traverse from head using next and print every song.
+
+Play Current / Next / Previous
+8.	If current is NULL, report an empty playlist.
+9.	For Next, move current to current->next if it exists.
+10.	For Previous, move current to current->prev if it exists.
+11.	Display the selected song details.
+
+Search Song
+12.	Read a title and traverse from head.
+13.	If a matching title is found, display its details; otherwise report not found.
+
+Delete Song
+14.	Find the node with the requested title.
+15.	Reconnect neighbouring nodes and update head or tail when necessary.
+16.	If current is deleted, select the next node if available, otherwise the previous node.
+
+17.	Delete the node.
+Reverse Playlist
+18.	For every node, swap prev and next.
+19.	Swap head and tail.
+
+Clear Playlist
+20.	Traverse the list and delete every node, saving next before deletion.
+21.	Set head, tail, and current to NULL.
+
+Exit
+22.	Repeat until the user enters 0.
+23.	The destructor releases any remaining nodes.
 
