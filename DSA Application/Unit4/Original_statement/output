@@ -1,57 +1,34 @@
-Enter root folder name: MyFiles
-Root folder created!
 
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 1
-Enter parent folder name: MyFiles
-Enter new folder name: Documents
-Folder created successfully!
+OUTPUT:
 
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 1
-Enter parent folder name: MyFiles
-Enter new folder name: Images
-Folder created successfully!
+Example 1: LL Imbalance
+Enter number of nodes: 3
+Enter node value: 30
+Enter node value: 20
+Enter node value: 10
+LL Imbalance: Right Rotation
+Balanced AVL Tree (Inorder): 10 20 30
 
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 2
-Enter folder name: Documents
-Enter file name: notes.pdf
-File added successfully!
+Example 2: RR Imbalance
+Enter number of nodes: 3
+Enter node value: 10
+Enter node value: 20
+Enter node value: 30
+RR Imbalance: Left Rotation
+Balanced AVL Tree (Inorder): 10 20 30
 
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 2
-Enter folder name: Images
-Enter file name: photo.jpg
-File added successfully!
+Example 3: LR Imbalance
+Enter number of nodes: 3
+Enter node value: 30
+Enter node value: 10
+Enter node value: 20
+LR Imbalance: Left then Right Rotation
+Balanced AVL Tree (Inorder): 10 20 30
 
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 3
-
---- FILE TREE ---
-[Folder] MyFiles
-   [Folder] Documents
-      [File] notes.pdf
-   [Folder] Images
-      [File] photo.jpg
-
-1. Create Folder
-2. Add File
-3. Display Tree
-4. Exit
-Enter choice: 4
+Example 4: RL Imbalance
+Enter number of nodes: 3
+Enter node value: 10
+Enter node value: 30
+Enter node value: 20
+RL Imbalance: Right then Left Rotation
+Balanced AVL Tree (Inorder): 10 20 30
