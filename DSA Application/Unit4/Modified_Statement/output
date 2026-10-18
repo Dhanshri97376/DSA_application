@@ -1,34 +1,62 @@
-========================================
-     BINARY TREE CHILD IDENTIFICATION
-========================================
+BINARY TREE CHILD IDENTIFICATION
+Enter number of nodes: 7
+Enter root node value: 1
+Enter value for node 2: 2
+Enter parent node value: 1
+Enter side (L for left, R for right): L
+Enter value for node 3: 3
+Enter parent node value: 1
+Enter side (L for left, R for right): R
+Enter value for node 4: 4
+Enter parent node value: 2
+Enter side (L for left, R for right): L
+Enter value for node 5: 5
+Enter parent node value: 2
+Enter side (L for left, R for right): R
+Enter value for node 6: 6
+Enter parent node value: 3
+Enter side (L for left, R for right): L
+Enter value for node 7: 7
+Enter parent node value: 3
+Enter side (L for left, R for right): R
 
-Enter node value to check: 2
-Node: 2
+Enter node to search: 2
+
+Node found: 2
+Parent node: 1
+Depth: 1
+Child status: Both left and right children exist
 Left child: 4
 Right child: 5
-Result: Both children.
 
-----------------------------------------
+Search another node? (1 = Yes, 0 = No): 1
 
-Enter node value to check: 3
-Node: 3
-No left child.
-Right child: 6
-Result: Right child only.
+Enter node to search: 4
 
-----------------------------------------
+Node found: 4
+Parent node: 2
+Depth: 2
+Child status: No children (Leaf node)
+Left child: None
+Right child: None
 
-Enter node value to check: 4
-Node: 4
-No left child.
-No right child.
-Result: No children (leaf node).
+Search another node? (1 = Yes, 0 = No): 1
 
-----------------------------------------
+Enter node to search: 3
 
-Enter node value to check: 10
-Node not found in the tree.
+Node found: 3
+Parent node: 1
+Depth: 1
+Child status: Both left and right children exist
+Left child: 6
+Right child: 7
 
-========================================
-           PROGRAM END
-========================================
+Search another node? (1 = Yes, 0 = No): 1
+
+Enter node to search: 10
+Node 10 not found in the tree.
+
+Search another node? (1 = Yes, 0 = No): 0
+
+Program ended successfully.
+
