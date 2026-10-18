@@ -1,1 +1,3 @@
+Dynamic Music Playlist Management System Using Doubly Linked List
 
+To design and develop a Dynamic Music Playlist Management System using C++ and a Doubly Linked List to overcome the limitations of basic playlist management. The system aims to provide flexible song organization by allowing users to add new tracks, remove existing songs, search for specific tracks, and display the entire playlist. It also supports forward and backward navigation between songs through bidirectional links. Dynamic memory allocation is used to manage playlist size according to user requirements. The proposed system provides an organized, menu-driven interface and demonstrates how linked-list operations can improve the flexibility and efficiency of music playlist management.
