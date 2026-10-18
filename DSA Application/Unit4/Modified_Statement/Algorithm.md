@@ -1,37 +1,28 @@
-## Algorithm – Automated File Classification and Organization System Using C++
+Algorithm 
 
-**Algorithm:**
+1. Start the program and initialize an empty AVL tree with node data, left and right pointers, and height.
 
-1. **Start** the program and initialize the required variables and filesystem operations.
+2. Input the number of nodes to be inserted into the AVL tree.
 
-2. Ask the user to enter the directory path containing the files to be organized.
+3. Read the node value from the user and insert it into the tree according to the Binary Search Tree (BST) property.
 
-3. Check whether the specified directory exists and is valid. If the directory is invalid, display an error message and terminate the program.
+4. Update the height of each node after insertion by calculating the maximum height of its left and right subtrees and adding one.
 
-4. Read the files available in the specified directory using C++ filesystem operations.
+5. Calculate the balance factor of each node by subtracting the height of the right subtree from the height of the left subtree.
 
-5. Select each file individually and check whether it is a regular file. Ignore directories and other non-regular entries.
+6. Check for imbalance by determining whether the balance factor of any node is greater than 1 or less than -1.
 
-6. Extract the file extension and convert it to lowercase to ensure consistent classification regardless of letter case.
+7. Identify the type of imbalance based on the insertion position:
 
-7. Identify the category of the file based on its extension, such as Documents, Images, Videos, Audio, Code, or Others.
+- LL (Left-Left): Perform a right rotation.
+- RR (Right-Right): Perform a left rotation.
+- LR (Left-Right): Perform a left rotation followed by a right rotation.
+- RL (Right-Left): Perform a right rotation followed by a left rotation.
 
-8. Create the appropriate destination folder inside the selected directory if it does not already exist.
+8. Perform the required rotation to restore balance and update the heights of the affected nodes.
 
-9. Construct the destination path by combining the category folder with the original filename.
+9. Repeat the insertion and balancing process for all remaining node values until every value has been inserted and the AVL tree is balanced.
 
-10. Check whether a file with the same name already exists in the destination folder. If a duplicate exists, skip the file to prevent overwriting existing data.
+10. Display the detected imbalance and rotation performed, followed by the inorder traversal of the balanced AVL tree.
 
-11. If no duplicate exists, move the file into its corresponding destination folder using filesystem operations.
-
-12. Display the filename and destination category after a successful file movement. If an operation fails, handle the error appropriately.
-
-13. Repeat the classification and organization process for all remaining regular files in the selected directory.
-
-14. Maintain counters for successfully organized files and skipped files to prepare the final summary.
-
-15. Display the organization summary, including the number of files organized and the number of files skipped.
-
-16. Display a completion message indicating that the file organization process has finished.
-
-17. **Stop** the program.
+11. Stop the program.
