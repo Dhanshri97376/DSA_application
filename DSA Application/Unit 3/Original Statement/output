@@ -1,1 +1,70 @@
+====================================
+      MUSICAL PLAYLIST MANAGER
+====================================
+1. Add Song
+2. Delete Song
+3. Search Song
+4. Display Playlist
+5. Play Next Song
+6. Play Previous Song
+7. Exit
+====================================
+Enter your choice: 1
 
+Enter Song Name: Perfect
+Enter Artist Name: Ed Sheeran
+Song added successfully!
+
+Enter your choice: 1
+
+Enter Song Name: Shape of You
+Enter Artist Name: Ed Sheeran
+Song added successfully!
+
+Enter your choice: 1
+
+Enter Song Name: Believer
+Enter Artist Name: Imagine Dragons
+Song added successfully!
+
+Enter your choice: 4
+
+-------- YOUR PLAYLIST --------
+1. Perfect - Ed Sheeran
+2. Shape of You - Ed Sheeran
+3. Believer - Imagine Dragons
+--------------------------------
+
+Enter your choice: 3
+
+Enter song name to search: Believer
+Song found successfully!
+Song: Believer
+Artist: Imagine Dragons
+
+Enter your choice: 5
+
+Playing Next Song: Shape of You
+Artist: Ed Sheeran
+
+Enter your choice: 6
+
+Playing Previous Song: Perfect
+Artist: Ed Sheeran
+
+Enter your choice: 2
+
+Enter song name to delete: Shape of You
+Song deleted successfully!
+
+Enter your choice: 4
+
+-------- YOUR PLAYLIST --------
+1. Perfect - Ed Sheeran
+2. Believer - Imagine Dragons
+--------------------------------
+
+Enter your choice: 7
+
+Exiting Musical Playlist Manager...
+Thank you for using the application!
