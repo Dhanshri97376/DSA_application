@@ -1,35 +1,35 @@
-Start the program.
+1.Start the program.
 
 
 
-Create a binary tree with predefined nodes.
+2.Create a binary tree with predefined nodes.
 
 
 
-Accept the value of the node to be checked from the user.
+3.Accept the value of the node to be checked from the user.
 
 
 
-Search for the specified node in the binary tree.
+4.Search for the specified node in the binary tree.
 
 
 
-If the node is not found, display “Node not found in the tree.”
+5.If the node is not found, display “Node not found in the tree.”
 
 
-If the node is found, check its left and right pointers.
-
-
-
-If both pointers are not NULL, display Both children.
+6.If the node is found, check its left and right pointers.
 
 
 
-If only the left pointer is not NULL, display Left child only.
+7.If both pointers are not NULL, display Both children.
 
 
 
-If only the right pointer is not NULL, display Right child only.
+8.If only the left pointer is not NULL, display Left child only.
+
+
+
+9.If only the right pointer is not NULL, display Right child only.
 
 
 
