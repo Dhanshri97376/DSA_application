@@ -4,68 +4,74 @@
                      │
              ┌───────▼───────┐
              │ Initialize    │
-             │ Program       │
+             │ AVL Tree      │
              └───────┬───────┘
                      │
              ┌───────▼───────┐
-             │ Enter Folder  │
-             │ Path          │
+             │ Enter Number  │
+             │ of Nodes (n)  │
              └───────┬───────┘
                      │
              ┌───────▼───────┐
-             │ Does Folder   │
-             │ Exist?        │
+             │ Input Node    │
+             │ Value         │
+             └───────┬───────┘
+                     │
+             ┌───────▼───────┐
+             │ Insert Node   │
+             │ into AVL Tree │
+             └───────┬───────┘
+                     │
+             ┌───────▼───────┐
+             │ Update Height │
+             │ of Each Node  │
+             └───────┬───────┘
+                     │
+             ┌───────▼───────┐
+             │ Calculate     │
+             │ Balance Factor│
+             └───────┬───────┘
+                     │
+             ┌───────▼───────┐
+             │ Is Tree       │
+             │ Unbalanced?   │
              └───────┬───────┘
                  No  │  Yes
              ┌───────┘   └───────────┐
              ▼                        ▼
      ┌───────────────┐       ┌────────────────┐
-     │ Display Error │       │ Read Files in  │
-     │ Message       │       │ the Directory  │
+     │ Check for     │       │ Identify Type  │
+     │ More Nodes    │       │ of Imbalance   │
      └───────┬───────┘       └───────┬────────┘
              │                       │
              │               ┌───────▼────────┐
-             └──────────────►│ Identify File  │
-                             │ Extension      │
-                             └───────┬────────┘
-                                     │
-                             ┌───────▼────────┐
-                             │ Classify File  │
-                             │ by Type        │
-                             └───────┬────────┘
-                                     │
-                       ┌─────────────┼─────────────┐
-                       ▼             ▼             ▼
-                ┌────────────┐ ┌────────────┐ ┌────────────┐
-                │ Documents  │ │ Images     │ │ Audio/     │
-                │            │ │            │ │ Videos     │
-                └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
-                      │              │              │
-                      ▼              ▼              ▼
-                ┌────────────┐ ┌────────────┐ ┌────────────┐
-                │ Create or  │ │ Create or  │ │ Create or  │
-                │ Find Folder│ │ Find Folder│ │ Find Folder│
-                └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
-                      │              │              │
-                      └──────────────┼──────────────┘
-                                     │
-                             ┌───────▼────────┐
-                             │ Move File to   │
-                             │ Correct Folder │
-                             └───────┬────────┘
-                                     │
-                             ┌───────▼────────┐
-                             │ Are More Files │
-                             │ Available?     │
-                             └───────┬────────┘
-                                 Yes │ No
-                           ┌─────────┘  └──────────┐
-                           ▼                       ▼
-                    Identify Next          ┌────────────────┐
-                    File                   │ Display Result │
-                           │                │ and Summary    │
-                           └──► back        └───────┬────────┘
-                                                    │
-                                            ┌───────▼───────┐
-                                            │      END      │
-                                            └───────────────┘
+             │               │ LL, RR, LR or RL│
+             │               └───────┬────────┘
+             │                       │
+             │               ┌───────▼────────┐
+             │               │ Perform Required│
+             │               │ Rotation        │
+             │               └───────┬────────┘
+             │                       │
+             │               ┌───────▼────────┐
+             │               │ Update Heights │
+             │               │ of Nodes        │
+             │               └───────┬────────┘
+             │                       │
+             └───────────┬───────────┘
+                         │
+                 ┌───────▼────────┐
+                 │ Are More Nodes │
+                 │ Available?     │
+                 └───────┬────────┘
+                     Yes │ No
+                 ┌───────┘  └───────────┐
+                 ▼                       ▼
+          Input Next Node       ┌────────────────┐
+                 │              │ Display        │
+                 └──► Insert    │ Balanced Tree  │
+                      Next Node └───────┬────────┘
+                                        │
+                                ┌───────▼───────┐
+                                │      END      │
+                                └───────────────┘
