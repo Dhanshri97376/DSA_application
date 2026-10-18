@@ -1,34 +1,49 @@
+========================================
+     BINARY TREE CHILD IDENTIFICATION
+========================================
 
-OUTPUT:
+Tree nodes: 1, 2, 3, 4, 5, 6
 
-Example 1: LL Imbalance
-Enter number of nodes: 3
-Enter node value: 30
-Enter node value: 20
-Enter node value: 10
-LL Imbalance: Right Rotation
-Balanced AVL Tree (Inorder): 10 20 30
+Enter node value to check: 2
 
-Example 2: RR Imbalance
-Enter number of nodes: 3
-Enter node value: 10
-Enter node value: 20
-Enter node value: 30
-RR Imbalance: Left Rotation
-Balanced AVL Tree (Inorder): 10 20 30
+Node: 2
+Left child: 4
+Right child: 5
 
-Example 3: LR Imbalance
-Enter number of nodes: 3
-Enter node value: 30
-Enter node value: 10
-Enter node value: 20
-LR Imbalance: Left then Right Rotation
-Balanced AVL Tree (Inorder): 10 20 30
+Result: Both children.
 
-Example 4: RL Imbalance
-Enter number of nodes: 3
-Enter node value: 10
-Enter node value: 30
-Enter node value: 20
-RL Imbalance: Right then Left Rotation
-Balanced AVL Tree (Inorder): 10 20 30
+----------------------------------------
+Enter node value to check: 3
+
+Node: 3
+No left child.
+Right child: 6
+
+Result: Right child only.
+
+----------------------------------------
+Enter node value to check: 4
+
+Node: 4
+No left child.
+No right child.
+
+Result: No children (leaf node).
+
+----------------------------------------
+Enter node value to check: 5
+
+Node: 5
+No left child.
+No right child.
+
+Result: No children (leaf node).
+
+----------------------------------------
+Enter node value to check: 10
+
+Node not found in the tree.
+
+========================================
+              PROGRAM END
+========================================
