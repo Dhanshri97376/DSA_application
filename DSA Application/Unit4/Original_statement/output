@@ -1,0 +1,57 @@
+Enter root folder name: MyFiles
+Root folder created!
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 1
+Enter parent folder name: MyFiles
+Enter new folder name: Documents
+Folder created successfully!
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 1
+Enter parent folder name: MyFiles
+Enter new folder name: Images
+Folder created successfully!
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 2
+Enter folder name: Documents
+Enter file name: notes.pdf
+File added successfully!
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 2
+Enter folder name: Images
+Enter file name: photo.jpg
+File added successfully!
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 3
+
+--- FILE TREE ---
+[Folder] MyFiles
+   [Folder] Documents
+      [File] notes.pdf
+   [Folder] Images
+      [File] photo.jpg
+
+1. Create Folder
+2. Add File
+3. Display Tree
+4. Exit
+Enter choice: 4
