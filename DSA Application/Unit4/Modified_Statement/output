@@ -1,27 +1,34 @@
-AVL Tree Imbalance Detection
+========================================
+     BINARY TREE CHILD IDENTIFICATION
+========================================
 
-Enter number of nodes: 7
-Enter node value 1: 30
-Enter node value 2: 10
-Enter node value 3: 20
-LR Imbalance at 30: Left then Right Rotation
-Enter node value 4: 40
-Enter node value 5: 50
-RR Imbalance at 30: Left Rotation
-Enter node value 6: 25
-RL Imbalance at 20: Right then Left Rotation
-Enter node value 7: 5
+Enter node value to check: 2
+Node: 2
+Left child: 4
+Right child: 5
+Result: Both children.
 
-Inorder Traversal: 5 10 20 25 30 40 50
+----------------------------------------
 
-Final Balanced AVL Tree:
+Enter node value to check: 3
+Node: 3
+No left child.
+Right child: 6
+Result: Right child only.
 
-               50
-          40
-30
-          25
-     20
-          10
-               5
+----------------------------------------
 
-Program completed successfully.
+Enter node value to check: 4
+Node: 4
+No left child.
+No right child.
+Result: No children (leaf node).
+
+----------------------------------------
+
+Enter node value to check: 10
+Node not found in the tree.
+
+========================================
+           PROGRAM END
+========================================
