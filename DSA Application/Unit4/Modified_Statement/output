@@ -1,18 +1,27 @@
-====================================
-       SMART FILE ORGANIZER
-====================================
-Enter folder path: C:\Users\hp\Desktop\TestFiles
+AVL Tree Imbalance Detection
 
-Moved: notes.pdf -> Documents
-Moved: photo.jpg -> Images
-Moved: song.mp3 -> Audio
-Moved: movie.mp4 -> Videos
-Moved: main.cpp -> Code
-Moved: data.zip -> Others
+Enter number of nodes: 7
+Enter node value 1: 30
+Enter node value 2: 10
+Enter node value 3: 20
+LR Imbalance at 30: Left then Right Rotation
+Enter node value 4: 40
+Enter node value 5: 50
+RR Imbalance at 30: Left Rotation
+Enter node value 6: 25
+RL Imbalance at 20: Right then Left Rotation
+Enter node value 7: 5
 
-========== SUMMARY ==========
-Files organized: 6
-Files skipped: 0
-Organization completed.
+Inorder Traversal: 5 10 20 25 30 40 50
 
-Press any key to continue . . .
+Final Balanced AVL Tree:
+
+               50
+          40
+30
+          25
+     20
+          10
+               5
+
+Program completed successfully.
