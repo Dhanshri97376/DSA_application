@@ -1,4 +1,4 @@
-Problem Statement – Musical Playlist Manager
+Problem Statement – Musical Playlist Manager using Doubly Linked List
 
 To implement the Musical Playlist Manager, the C++ programming language is used along with the Doubly Linked List data structure. The system is designed to manage songs dynamically and provide easy playlist navigation. Each song is stored in a node containing the song name, artist name, and pointers to the previous and next songs.
 
