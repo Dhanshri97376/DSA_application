@@ -1,71 +1,18 @@
-Output – Automated File Classification and Organization System Using C++
-
-
-====================================================
+====================================
        SMART FILE ORGANIZER
-====================================================
+====================================
+Enter folder path: C:\Users\hp\Desktop\TestFiles
 
-Enter directory path to organize:
-C:\Users\Student\Desktop\TestFiles
+Moved: notes.pdf -> Documents
+Moved: photo.jpg -> Images
+Moved: song.mp3 -> Audio
+Moved: movie.mp4 -> Videos
+Moved: main.cpp -> Code
+Moved: data.zip -> Others
 
-Organized: notes.pdf -> Documents
-Organized: assignment.docx -> Documents
-Organized: presentation.pptx -> Documents
-Organized: photo.jpg -> Images
-Organized: wallpaper.png -> Images
-Organized: holiday.jpeg -> Images
-Organized: song.mp3 -> Audio
-Organized: recording.wav -> Audio
-Organized: video.mp4 -> Videos
-Organized: movie.mkv -> Videos
-Organized: main.cpp -> Code
-Organized: program.py -> Code
-Organized: data.zip -> Others
-Organized: backup.rar -> Others
+========== SUMMARY ==========
+Files organized: 6
+Files skipped: 0
+Organization completed.
 
-====================================================
-             ORGANIZATION SUMMARY
-====================================================
-
-Files organized: 14
-Files skipped:   0
-
-Operation completed.
-
-====================================================
-       FINAL FOLDER STRUCTURE
-====================================================
-
-TestFiles/
-|
-|-- Documents/
-|   |-- notes.pdf
-|   |-- assignment.docx
-|   |-- presentation.pptx
-|
-|-- Images/
-|   |-- photo.jpg
-|   |-- wallpaper.png
-|   |-- holiday.jpeg
-|
-|-- Audio/
-|   |-- song.mp3
-|   |-- recording.wav
-|
-|-- Videos/
-|   |-- video.mp4
-|   |-- movie.mkv
-|
-|-- Code/
-|   |-- main.cpp
-|   |-- program.py
-|
-|-- Others/
-    |-- data.zip
-    |-- backup.rar
-
-====================================================
-Result: Files are successfully classified and moved
-into their respective folders based on file extensions.
-====================================================
-```
+Press any key to continue . . .
