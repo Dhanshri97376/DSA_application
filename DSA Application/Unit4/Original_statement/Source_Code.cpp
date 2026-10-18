@@ -1,122 +1,81 @@
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 struct Node {
-    int data, height;
-    Node *left, *right;
-
-    Node(int value) {
-        data = value;
-        height = 1;
-        left = right = NULL;
-    }
+    int data;
+    Node* left;
+    Node* right;
 };
 
-int height(Node *n) {
-    if (n == NULL)
-        return 0;
-    return n->height;
+Node* createNode(int value) {
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
 }
 
-int balanceFactor(Node *n) {
-    if (n == NULL)
-        return 0;
-    return height(n->left) - height(n->right);
-}
-
-Node* rightRotate(Node *y) {
-    Node *x = y->left;
-    Node *t = x->right;
-
-    x->right = y;
-    y->left = t;
-
-    y->height = 1 + max(height(y->left), height(y->right));
-    x->height = 1 + max(height(x->left), height(x->right));
-
-    return x;
-}
-
-Node* leftRotate(Node *x) {
-    Node *y = x->right;
-    Node *t = y->left;
-
-    y->left = x;
-    x->right = t;
-
-    x->height = 1 + max(height(x->left), height(x->right));
-    y->height = 1 + max(height(y->left), height(y->right));
-
-    return y;
-}
-
-Node* insert(Node *root, int value) {
+Node* findNode(Node* root, int key) {
     if (root == NULL)
-        return new Node(value);
+        return NULL;
 
-    if (value < root->data)
-        root->left = insert(root->left, value);
-    else if (value > root->data)
-        root->right = insert(root->right, value);
-    else
+    if (root->data == key)
         return root;
 
-    root->height = 1 + max(height(root->left), height(root->right));
+    Node* result = findNode(root->left, key);
 
-    int b = balanceFactor(root);
+    if (result != NULL)
+        return result;
 
-    if (b > 1 && value < root->left->data) {
-        cout << "LL Imbalance: Right Rotation\n";
-        return rightRotate(root);
-    }
-
-    if (b < -1 && value > root->right->data) {
-        cout << "RR Imbalance: Left Rotation\n";
-        return leftRotate(root);
-    }
-
-    if (b > 1 && value > root->left->data) {
-        cout << "LR Imbalance: Left then Right Rotation\n";
-        root->left = leftRotate(root->left);
-        return rightRotate(root);
-    }
-
-    if (b < -1 && value < root->right->data) {
-        cout << "RL Imbalance: Right then Left Rotation\n";
-        root->right = rightRotate(root->right);
-        return leftRotate(root);
-    }
-
-    return root;
-}
-
-void inorder(Node *root) {
-    if (root != NULL) {
-        inorder(root->left);
-        cout << root->data << " ";
-        inorder(root->right);
-    }
+    return findNode(root->right, key);
 }
 
 int main() {
-    Node *root = NULL;
-    int n, value;
+    Node* root = createNode(1);
 
-    cout << "Enter number of nodes: ";
-    cin >> n;
+    root->left = createNode(2);
+    root->right = createNode(3);
+    root->left->left = createNode(4);
+    root->left->right = createNode(5);
+    root->right->right = createNode(6);
 
-    for (int i = 0; i < n; i++) {
-        cout << "Enter node value: ";
-        cin >> value;
-        root = insert(root, value);
+    int key;
+
+    cout << "Binary Tree Child Identification\n";
+    cout << "Tree nodes: 1, 2, 3, 4, 5, 6\n";
+    cout << "Enter node value to check: ";
+    cin >> key;
+
+    Node* target = findNode(root, key);
+
+    if (target == NULL) {
+        cout << "Node not found in the tree.\n";
+    } else {
+        cout << "Node: " << target->data << endl;
+
+        if (target->left != NULL)
+            cout << "Left child: "
+                 << target->left->data << endl;
+        else
+            cout << "No left child.\n";
+
+        if (target->right != NULL)
+            cout << "Right child: "
+                 << target->right->data << endl;
+        else
+            cout << "No right child.\n";
+
+        if (target->left != NULL &&
+            target->right != NULL)
+            cout << "Result: Both children.\n";
+        else if (target->left != NULL)
+            cout << "Result: Left child only.\n";
+        else if (target->right != NULL)
+            cout << "Result: Right child only.\n";
+        else
+            cout << "Result: No children (leaf node).\n";
     }
 
-    cout << "\nBalanced AVL Tree (Inorder): ";
-    inorder(root);
-
-    cout << "\n";
     return 0;
 }
-
