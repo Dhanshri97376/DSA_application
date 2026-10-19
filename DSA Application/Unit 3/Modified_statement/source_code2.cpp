@@ -1,199 +1,234 @@
-
 #include <iostream>
 #include <string>
 using namespace std;
 
-struct Node {
-    string name;
+struct Node
+{
+    string song;
+    Node* prev;
     Node* next;
 };
 
-class SmartFileOrganizer {
-private:
-    Node* head;
+Node* head = NULL;
+Node* tail = NULL;
 
-public:
-    SmartFileOrganizer() {
-        head = NULL;
+// Add a new song
+void addSong(string name)
+{
+    Node* newNode = new Node;
+    newNode->song = name;
+    newNode->prev = tail;
+    newNode->next = NULL;
+
+    if (head == NULL)
+    {
+        head = tail = newNode;
+    }
+    else
+    {
+        tail->next = newNode;
+        tail = newNode;
     }
 
-    // Add a file or folder name
-    void addEntry() {
-        Node* newNode = new Node;
+    cout << "Song added successfully: " << name << endl;
+}
 
-        cout << "Enter file or folder name: ";
-        cin.ignore();
-        getline(cin, newNode->name);
+// Remove a song
+void removeSong(string name)
+{
+    Node* temp = head;
 
-        newNode->next = NULL;
-
-        if (head == NULL) {
-            head = newNode;
-        } else {
-            Node* temp = head;
-
-            while (temp->next != NULL) {
-                temp = temp->next;
-            }
-
-            temp->next = newNode;
-        }
-
-        cout << "Entry added successfully!\n";
+    while (temp != NULL && temp->song != name)
+    {
+        temp = temp->next;
     }
 
-    // Display all entries
-    void displayEntries() {
-        if (head == NULL) {
-            cout << "Organizer is empty.\n";
+    if (temp == NULL)
+    {
+        cout << "Song not found in playlist." << endl;
+        return;
+    }
+
+    if (temp == head)
+        head = temp->next;
+    else
+        temp->prev->next = temp->next;
+
+    if (temp == tail)
+        tail = temp->prev;
+    else
+        temp->next->prev = temp->prev;
+
+    cout << "Song removed successfully: " << temp->song << endl;
+    delete temp;
+}
+
+// Search for a song
+void searchSong(string name)
+{
+    Node* temp = head;
+    int position = 1;
+
+    while (temp != NULL)
+    {
+        if (temp->song == name)
+        {
+            cout << "Song found at position "
+                 << position << ": " << temp->song << endl;
             return;
         }
 
-        Node* temp = head;
-        int count = 1;
-
-        cout << "\n--- File and Folder List ---\n";
-
-        while (temp != NULL) {
-            cout << count << ". " << temp->name << endl;
-            temp = temp->next;
-            count++;
-        }
+        temp = temp->next;
+        position++;
     }
 
-    // Search for an entry
-    void searchEntry() {
-        if (head == NULL) {
-            cout << "Organizer is empty.\n";
-            return;
-        }
+    cout << "Song not found in playlist." << endl;
+}
 
-        string searchName;
-        cout << "Enter name to search: ";
-        cin.ignore();
-        getline(cin, searchName);
-
-        Node* temp = head;
-
-        while (temp != NULL) {
-            if (temp->name == searchName) {
-                cout << "Entry found: " << temp->name << endl;
-                return;
-            }
-
-            temp = temp->next;
-        }
-
-        cout << "Entry not found.\n";
+// Display all songs
+void displayPlaylist()
+{
+    if (head == NULL)
+    {
+        cout << "Playlist is empty." << endl;
+        return;
     }
 
-    // Delete an entry
-    void deleteEntry() {
-        if (head == NULL) {
-            cout << "Organizer is empty.\n";
-            return;
-        }
+    Node* temp = head;
+    int position = 1;
 
-        string deleteName;
-        cout << "Enter name to delete: ";
-        cin.ignore();
-        getline(cin, deleteName);
+    cout << "\n----- Music Playlist -----" << endl;
 
-        Node* temp = head;
-        Node* previous = NULL;
+    while (temp != NULL)
+    {
+        cout << position << ". " << temp->song << endl;
+        temp = temp->next;
+        position++;
+    }
+}
 
-        while (temp != NULL &&
-               temp->name != deleteName) {
-            previous = temp;
-            temp = temp->next;
-        }
+// Navigate forward
+void playForward(string name)
+{
+    Node* temp = head;
 
-        if (temp == NULL) {
-            cout << "Entry not found.\n";
-            return;
-        }
+    while (temp != NULL && temp->song != name)
+        temp = temp->next;
 
-        if (previous == NULL) {
-            head = temp->next;
-        } else {
-            previous->next = temp->next;
-        }
+    if (temp == NULL)
+    {
+        cout << "Song not found in playlist." << endl;
+        return;
+    }
 
+    if (temp->next != NULL)
+        cout << "Next song: " << temp->next->song << endl;
+    else
+        cout << "This is the last song in the playlist." << endl;
+}
+
+// Navigate backward
+void playBackward(string name)
+{
+    Node* temp = head;
+
+    while (temp != NULL && temp->song != name)
+        temp = temp->next;
+
+    if (temp == NULL)
+    {
+        cout << "Song not found in playlist." << endl;
+        return;
+    }
+
+    if (temp->prev != NULL)
+        cout << "Previous song: " << temp->prev->song << endl;
+    else
+        cout << "This is the first song in the playlist." << endl;
+}
+
+// Free dynamically allocated memory
+void clearPlaylist()
+{
+    Node* temp = head;
+
+    while (temp != NULL)
+    {
+        Node* nextNode = temp->next;
         delete temp;
-        cout << "Entry deleted successfully!\n";
+        temp = nextNode;
     }
 
-    // Count entries
-    void countEntries() {
-        Node* temp = head;
-        int count = 0;
+    head = NULL;
+    tail = NULL;
+}
 
-        while (temp != NULL) {
-            count++;
-            temp = temp->next;
-        }
-
-        cout << "Total entries: " << count << endl;
-    }
-
-    // Release allocated memory
-    ~SmartFileOrganizer() {
-        Node* temp = head;
-
-        while (temp != NULL) {
-            Node* nextNode = temp->next;
-            delete temp;
-            temp = nextNode;
-        }
-    }
-};
-
-int main() {
-    SmartFileOrganizer organizer;
+int main()
+{
     int choice;
+    string name;
 
-    do {
-        cout << "\n===== SMART FILE ORGANIZER =====\n";
-        cout << "1. Add File/Folder Name\n";
-        cout << "2. Display All Entries\n";
-        cout << "3. Search Entry\n";
-        cout << "4. Delete Entry\n";
-        cout << "5. Count Total Entries\n";
-        cout << "6. Exit\n";
+    do
+    {
+        cout << "\n===== MUSIC PLAYLIST MANAGEMENT =====" << endl;
+        cout << "1. Add Song" << endl;
+        cout << "2. Remove Song" << endl;
+        cout << "3. Search Song" << endl;
+        cout << "4. Display Playlist" << endl;
+        cout << "5. Next Song" << endl;
+        cout << "6. Previous Song" << endl;
+        cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice) {
+        cin.ignore(1000, '\n');
+
+        switch (choice)
+        {
             case 1:
-                organizer.addEntry();
+                cout << "Enter song name: ";
+                getline(cin, name);
+                addSong(name);
                 break;
 
             case 2:
-                organizer.displayEntries();
+                cout << "Enter song name to remove: ";
+                getline(cin, name);
+                removeSong(name);
                 break;
 
             case 3:
-                organizer.searchEntry();
+                cout << "Enter song name to search: ";
+                getline(cin, name);
+                searchSong(name);
                 break;
 
             case 4:
-                organizer.deleteEntry();
+                displayPlaylist();
                 break;
 
             case 5:
-                organizer.countEntries();
+                cout << "Enter current song name: ";
+                getline(cin, name);
+                playForward(name);
                 break;
 
             case 6:
-                cout << "Exiting Smart File Organizer.\n";
+                cout << "Enter current song name: ";
+                getline(cin, name);
+                playBackward(name);
+                break;
+
+            case 7:
+                clearPlaylist();
+                cout << "Playlist closed successfully." << endl;
                 break;
 
             default:
-                cout << "Invalid choice! Try again.\n";
+                cout << "Invalid choice. Please try again." << endl;
         }
 
-    } while (choice != 6);
+    } while (choice != 7);
 
     return 0;
 }
-
